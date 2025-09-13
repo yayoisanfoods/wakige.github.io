@@ -13,13 +13,12 @@
   </div>
 
   <div id="return" class="hidden">
-    <a href="vol2.html" id="returnLink">もどる</a>
+    <a href="vol2.html">もどる</a>
   </div>
 
   <script>
     const audio = document.getElementById("scarySound");
 
-    // 最初の10秒間は「もどる」非表示＆無効
     setTimeout(() => {
       if (audio.ended) {
         showReturn();
@@ -32,11 +31,7 @@
       document.getElementById("overlay").style.display = "none";
       document.body.style.backgroundColor = "red";
       document.body.style.animation = "none";
-      const returnDiv = document.getElementById("return");
-      const returnLink = document.getElementById("returnLink");
-      returnDiv.classList.remove("hidden");
-      returnLink.style.pointerEvents = "auto"; // クリック可能に
-      returnLink.style.opacity = "1";          // 見えるように
+      document.getElementById("return").classList.remove("hidden");
     }
   </script>
 </body>
