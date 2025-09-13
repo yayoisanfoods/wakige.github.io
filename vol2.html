@@ -10,10 +10,10 @@
     <h1>このへんの心霊サイト</h1>
     <nav>
       <ul>
-        <li><a href="index.html" onclick="handleLink('index.html'); return false;">ホーム</a></li>
-        <li><a href="red.html" onclick="handleLink('red.html'); return false;">赤い部屋</a></li>
-        <li><a href="scary.html" onclick="handleLink('scary.html'); return false;">恐怖系</a></li>
-        <li><a href="admin.html" onclick="handleLink('admin.html'); return false;">管理人について</a></li>
+        <li><a href="#" onclick="maybeJump(); return false;">ホーム</a></li>
+        <li><a href="#" onclick="maybeJump(); return false;">赤い部屋</a></li>
+        <li><a href="#" onclick="maybeJump(); return false;">恐怖系</a></li>
+        <li><a href="#" onclick="maybeJump(); return false;">管理人について</a></li>
       </ul>
     </nav>
   </header>
@@ -28,6 +28,15 @@
     <p>⚠️（警告）このページを開くことで、トロイの木馬によるコンピュータウイルスの攻撃がはじまります！</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function maybeJump() {
+      const chance = Math.floor(Math.random() * 5); // 0〜4
+      if (chance === 0) {
+        window.location.href = "vol2_horror.html";
+      } else {
+        alert("……何も起こらなかったようだ");
+      }
+    }
+  </script>
 </body>
 </html>
