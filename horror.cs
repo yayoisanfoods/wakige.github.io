@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: black;
   animation: flash 0.3s infinite;
+  font-family: 'Courier New', monospace;
 }
 
 @keyframes flash {
@@ -19,11 +20,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #scaryImage {
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 600px;
   animation: shake 0.2s infinite;
 }
 
@@ -54,9 +57,21 @@ footer {
   padding: 10px 20px;
   background-color: #111;
   transition: 0.3s;
+  display: inline-block;
 }
 
 #returnLink:hover {
   background-color: #f00;
   color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  #scaryImage {
+    width: 100%;
+  }
+
+  #returnLink {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
 }
