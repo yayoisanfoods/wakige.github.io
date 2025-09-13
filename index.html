@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>このへんの心霊サイト</title>
+  <title>おいら、ウェブデザイナー</title>
   <style>
     body {
       background-color: white;
@@ -21,44 +21,74 @@
       margin: 0 auto;
     }
 
-    ul {
+    h1 {
+      font-size: 2em;
+      margin: 1em 0;
+    }
+
+    nav ul {
       list-style: none;
       padding: 0;
-      margin: 1em 0;
+      margin: 0;
       display: flex;
       justify-content: center;
       gap: 1em;
       flex-wrap: wrap;
     }
 
-    li a {
+    nav li a {
       color: green;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5em 1em;
+      display: inline-block;
     }
 
-    li a:hover {
+    nav li a:hover {
       text-decoration: underline;
     }
 
     .warning {
-      margin-top: 2em;
+      margin: 2em auto;
       font-weight: bold;
       color: red;
+      background-color: #fee;
+      padding: 1em;
+      border: 2px solid red;
+      max-width: 600px;
+    }
+
+    /* レスポンシブ対応 */
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      .warning {
+        font-size: 1em;
+        padding: 0.8em;
+      }
     }
   </style>
 </head>
 <body>
   <img src="neko.jpg" alt="ねこ画像">
 
-  <h1>このへんの心霊サイト</h1>
+  <h1>おいら、ウェブデザイナー</h1>
 
-  <ul>
-    <li><a href="vol2.html">ホーム</a></li>
-    <li><a href="#">赤い部屋</a></li>
-    <li><a href="#">恐怖系</a></li>
-    <li><a href="#">管理人について</a></li>
-  </ul>
+  <nav>
+    <ul>
+      <li><a href="vol2.html">恐怖系</a></li>
+      <li><a href="#">つくってないよ</a></li>
+      <li><a href="#">つくってないよ</a></li>
+      <li><a href="#">つくってないよ</a></li>
+    </ul>
+  </nav>
 
   <p class="warning">（警告）このページを開くことで、トロイの木馬によるコンピュータウイルスの攻撃がはじまります！</p>
 </body>
