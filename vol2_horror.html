@@ -9,7 +9,7 @@
 <body>
   <div id="overlay">
     <img src="scary.jpg" alt="恐怖画像" id="scaryImage">
-    <audio src="scary.mp3" autoplay></audio>
+    <audio id="scarySound" src="scary.mp3" autoplay></audio>
   </div>
 
   <div id="return" class="hidden">
@@ -17,11 +17,13 @@
   </div>
 
   <script>
-    setTimeout(() => {
+    const audio = document.getElementById("scarySound");
+    audio.addEventListener("ended", () => {
+      document.getElementById("overlay").style.display = "none";
+      document.body.style.backgroundColor = "red";
       document.body.style.animation = "none";
-      document.getElementById("overlay").style.animation = "none";
       document.getElementById("return").classList.remove("hidden");
-    }, 10000);
+    });
   </script>
 </body>
 </html>
