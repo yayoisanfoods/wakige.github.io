@@ -5,6 +5,10 @@ body {
   background-color: black;
   animation: flash 0.3s infinite;
   font-family: 'Courier New', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -17,23 +21,20 @@ body {
 
 /* オーバーレイ */
 #overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-/* 怖い画像（画面サイズに強制フィット） */
+/* 怖い画像：縦長でも全体表示 */
 #scaryImage {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   animation: shake 0.2s infinite;
 }
 
@@ -75,7 +76,7 @@ footer {
   color: #000;
 }
 
-/* 📱 スマホ対応（念のため） */
+/* スマホ対応（念のため） */
 @media screen and (max-width: 600px) {
   #returnLink {
     font-size: 1em;
