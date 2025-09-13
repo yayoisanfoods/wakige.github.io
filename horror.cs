@@ -1,12 +1,12 @@
-/* 全体設定 */
+/* 全体を画面に固定し、スクロール禁止 */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   background-color: black;
   animation: flash 0.3s infinite;
-  overflow: hidden;
 }
 
 /* 点滅背景 */
@@ -16,14 +16,14 @@ html, body {
   100% { background-color: black; }
 }
 
-/* scary.jpg を画面サイズに合わせて強制変形（縦横比無視） */
+/* scary.jpg を画面サイズに合わせて強制変形 */
 #scaryImage {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: fill; /* ← 画面サイズに合わせて縦横比を変形 */
+  object-fit: fill; /* ← 縦横比を無視して画面にぴったり */
   animation: shake 0.2s infinite;
 }
 
@@ -34,13 +34,4 @@ html, body {
   50% { transform: translate(5px, -5px); }
   75% { transform: translate(-5px, -5px); }
   100% { transform: translate(5px, 5px); }
-}
-
-/* レスポンシブ対応（念のため） */
-@media screen and (max-width: 768px) {
-  #scaryImage {
-    width: 100vw;
-    height: 100vh;
-    object-fit: fill;
-  }
 }
