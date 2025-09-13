@@ -1,4 +1,4 @@
-/* 全体を画面に固定し、スクロール禁止 */
+/* 全体設定：画面サイズにフィット＋スクロール禁止 */
 html, body {
   margin: 0;
   padding: 0;
@@ -7,24 +7,14 @@ html, body {
   overflow: hidden;
   background-color: black;
   animation: flash 0.3s infinite;
+  font-family: 'Courier New', monospace;
 }
 
-/* 点滅背景 */
+/* 点滅演出 */
 @keyframes flash {
   0% { background-color: black; }
   50% { background-color: red; }
   100% { background-color: black; }
-}
-
-/* scary.jpg を画面サイズに合わせて強制変形 */
-#scaryImage {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: fill; /* ← 縦横比を無視して画面にぴったり */
-  animation: shake 0.2s infinite;
 }
 
 /* 揺れ演出 */
@@ -34,4 +24,44 @@ html, body {
   50% { transform: translate(5px, -5px); }
   75% { transform: translate(-5px, -5px); }
   100% { transform: translate(5px, 5px); }
+}
+
+/* scary.jpg を画面にぴったり表示（縦横比維持） */
+#scaryImage {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  animation: shake 0.2s infinite;
+}
+
+/* オーバーレイ中央配置 */
+#overlay {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 「もどる」表示（10秒後） */
+#return {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw; /* 画面の約1/3サイズ */
+  color: red;
+  text-align: center;
+  animation: flash 0.5s infinite;
+}
+
+#return a {
+  color: red;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }
