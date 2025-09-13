@@ -3,24 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>humanのサイトリスト</title>
-  <link rel="stylesheet" href="style.css">
+  <title>このへんの心霊サイト</title>
+  <style>
+    body {
+      background-color: white;
+      color: green;
+      font-family: 'Yu Gothic', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    li a {
+      color: green;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    .warning {
+      margin-top: 2em;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>humanのサイトリスト</h1>
-    <nav>
-      <ul>
-        <li><a href="vol2.html">怖いサイトみたいなやつ</a></li>
-        <li><a href="#">非公開</a></li>
-        <li><a href="#">非公開</a></li>
-        <li><a href="#">非公開</a></li>
-      </ul>
-    </nav>
-  </header>
+  <img src="neko.jpg" alt="ねこ画像">
 
-  <main>
-    <p class="warning">連絡先→X:@desireofatorie</p>
-  </main>
+  <h1>このへんの心霊サイト</h1>
+
+  <ul>
+    <li><a href="vol2.html">ホーム</a></li>
+    <li><a href="#">赤い部屋</a></li>
+    <li><a href="#">恐怖系</a></li>
+    <li><a href="#">管理人について</a></li>
+  </ul>
+
+  <p class="warning">（警告）このページを開くことで、トロイの木馬によるコンピュータウイルスの攻撃がはじまります！</p>
 </body>
 </html>
