@@ -44,7 +44,7 @@ html, body {
   align-items: center;
 }
 
-/* 「もどる」表示 */
+/* 「もどる」表示（音声終了後） */
 #return {
   position: fixed;
   top: 50%;
@@ -69,7 +69,6 @@ html, body {
 }
 
 /* 初期状態：非表示＆クリック不可 */
-.hidden a {
-  pointer-events: none;
-  opacity: 0;
+.hidden {
+  display: none;
 }
