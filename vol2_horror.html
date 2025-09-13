@@ -18,12 +18,24 @@
 
   <script>
     const audio = document.getElementById("scarySound");
-    audio.addEventListener("ended", () => {
+
+    // 最初の10秒間は「もどる」非表示（何もしない）
+    setTimeout(() => {
+      // 音声が終わっていれば即切り替え
+      if (audio.ended) {
+        showReturn();
+      } else {
+        // 音声が終わってなければ、終了時に切り替え
+        audio.addEventListener("ended", showReturn);
+      }
+    }, 10000);
+
+    function showReturn() {
       document.getElementById("overlay").style.display = "none";
       document.body.style.backgroundColor = "red";
       document.body.style.animation = "none";
       document.getElementById("return").classList.remove("hidden");
-    });
+    }
   </script>
 </body>
 </html>
