@@ -51,18 +51,21 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 10vw;
-  color: black;
-  background-color: red;
-  padding: 1em 2em;
   text-align: center;
-  border: 5px solid black;
   animation: flash 0.5s infinite;
 }
 
+/* リンクの初期状態：非表示＆クリック不可 */
 #return a {
   color: black;
+  background-color: red;
+  padding: 1em 2em;
+  border: 5px solid black;
   text-decoration: none;
   font-weight: bold;
+  pointer-events: none; /* ← クリック不可 */
+  opacity: 0;           /* ← 見えない */
+  transition: opacity 0.5s ease;
 }
 
 .hidden {
