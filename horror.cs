@@ -1,3 +1,4 @@
+/* 全体設定 */
 html, body {
   margin: 0;
   padding: 0;
@@ -15,13 +16,31 @@ html, body {
   100% { background-color: black; }
 }
 
-/* scary.jpg を画面に強制フィット（縦横比変更） */
+/* scary.jpg を画面サイズに合わせて強制変形（縦横比無視） */
 #scaryImage {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: fill; /* ← ここがポイント！ */
+  object-fit: fill; /* ← 画面サイズに合わせて縦横比を変形 */
   animation: shake 0.2s infinite;
+}
+
+/* 揺れ演出 */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(-5px, -5px); }
+  100% { transform: translate(5px, 5px); }
+}
+
+/* レスポンシブ対応（念のため） */
+@media screen and (max-width: 768px) {
+  #scaryImage {
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+  }
 }
