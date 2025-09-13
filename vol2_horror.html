@@ -19,20 +19,13 @@
   <script>
     const audio = document.getElementById("scarySound");
 
-    setTimeout(() => {
-      if (audio.ended) {
-        showReturn();
-      } else {
-        audio.addEventListener("ended", showReturn);
-      }
-    }, 10000);
-
-    function showReturn() {
+    // 音声が終わったら「もどる」表示
+    audio.addEventListener("ended", () => {
       document.getElementById("overlay").style.display = "none";
       document.body.style.backgroundColor = "red";
       document.body.style.animation = "none";
       document.getElementById("return").classList.remove("hidden");
-    }
+    });
   </script>
 </body>
 </html>
