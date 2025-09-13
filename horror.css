@@ -44,30 +44,32 @@ html, body {
   align-items: center;
 }
 
-/* 「もどる」表示（音声終了後） */
+/* 「もどる」表示 */
 #return {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 10vw;
-  text-align: center;
   animation: flash 0.5s infinite;
 }
 
-/* リンクの初期状態：非表示＆クリック不可 */
 #return a {
+  display: inline-block;
+  font-size: 10vw;
   color: black;
   background-color: red;
   padding: 1em 2em;
   border: 5px solid black;
   text-decoration: none;
   font-weight: bold;
-  pointer-events: none; /* ← クリック不可 */
-  opacity: 0;           /* ← 見えない */
+  text-align: center;
+  pointer-events: auto;
+  opacity: 1;
   transition: opacity 0.5s ease;
 }
 
-.hidden {
-  display: none;
+/* 初期状態：非表示＆クリック不可 */
+.hidden a {
+  pointer-events: none;
+  opacity: 0;
 }
